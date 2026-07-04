@@ -38,7 +38,7 @@ pipeline {
              }
             steps {
             echo 'Creating the container...'
-            sh 'docker run -dit --name app-web -p 9100:80  -v "$WORKSPACE/app-web":/usr/local/apache2/htdocs/ httpd'
+            sh 'docker run -dit --name app-web -p 9200:80  -v "$WORKSPACE/app-web":/usr/local/apache2/htdocs/ httpd'
             }
         }
         //Nginx webserver in Test
@@ -51,7 +51,7 @@ pipeline {
              }
             steps {
             echo 'Creating the container...'
-            sh 'docker run -dit --name app-web -p 9100:80  -v "$WORKSPACE/app-web":/usr/share/nginx/html nginx'
+            sh 'docker run -dit --name app-web -p 9200:80  -v "$WORKSPACE/app-web":/usr/share/nginx/html nginx'
          
             }
         }
@@ -65,7 +65,7 @@ pipeline {
              }
             steps {
             echo 'Creating the container...'
-            sh 'docker run -dit --name app-web -p 9100:80  -v "$WORKSPACE/app-web":/usr/share/nginx/html nginx'
+            sh 'docker run -dit --name app-web -p 9200:80  -v "$WORKSPACE/app-web":/usr/share/nginx/html nginx'
          
             }
         }
